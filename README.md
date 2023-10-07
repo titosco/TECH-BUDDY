@@ -1,6 +1,6 @@
 This is a social network.
-that is being designed to connect teches from all around the world.
-It id s MERN app.
+that is being designed to connect techies from all around the world.
+It is MERN app.
 It comprises of 2 stages
 
 Stage 1[Backend]-
