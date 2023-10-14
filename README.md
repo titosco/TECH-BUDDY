@@ -25,7 +25,7 @@ NPM express - validator
 bcryptJs[for password encryption]
 JSON webtoken[token for validation]
 Nodemon[constantly watch server without us refreshing]
-create user.model
+Create user.model
 Send name, email, password to register the user -
 Init middleware -> App.use();
 Handle validation and responses if the user does not sand the right stuff ->
@@ -46,9 +46,9 @@ to Register user -
   await bcrypt.gensalt(10)-10 is the default
   await bcrypt.hash(password, salt)
 
-to make sure that there is not an existing user -
-let user = await User.findOne({ email});
-if there is not an existing user-
+To make sure that there is not an existing user -
+Let user = await User.findOne({ email});
+If there is not an existing user-
 user = new User({
 name,
 email,
@@ -57,3 +57,15 @@ password
 });
 
 use " await user.save(); " to save to MongoDB ATLAS
+Install jsonwebtoken
+Const jwt = require('jsonwebtoken')
+Create middleware folder-
+auth.js
+reequire jsonwebtoken
+require config
+module.export = function(){}
+
+Inside the func-
+Get token from header
+Check if no token
+Verify token
