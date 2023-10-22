@@ -69,3 +69,17 @@ Inside the func-
 Get token from header
 Check if no token
 Verify token
+
+Authenticate user & token
+-Make sure email exists
+-Make sure password matches
+-Use same error messages for both to prevent security risks/leaks
+
+Create the profile model
+Create the ProfileSchema = new mongoose.Schema
+Include-
+user, company, website, location, status, skills, bio, githubusername
+Experiences - title, company, location, from, to, current, description
+Education- title, company, location, from, to, current, description
+Socials- youtube, x, facebook, linkedin, instagram
+Date
