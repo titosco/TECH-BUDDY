@@ -32,7 +32,7 @@ const ProfileSchema = new mongoose.Schema({
 		{
 			title: {
 				type: String,
-				required: trusted
+				required: true
 			},
 			company: {
 				type: String,
@@ -79,7 +79,7 @@ const ProfileSchema = new mongoose.Schema({
 				type: Date
 			},
 			current: {
-				type: Booleanm,
+				type: Boolean,
 				default: false
 			},
 			description: {
@@ -105,7 +105,7 @@ const ProfileSchema = new mongoose.Schema({
 			}
 	},
 	date: {
-		type: date,
+		type: Date,
 		default: Date.now
 	}
 });
