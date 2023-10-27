@@ -84,3 +84,7 @@ Education- title, company, location, from, to, current, description
 Socials- youtube, x, facebook, linkedin, instagram
 Date
 Access the routes/api/profile/ and import both profile and user model
+Create & Update profile routes
+router.post('/', auth, [], async(req, res) =>{});
+Build proffile object
+Build social object
