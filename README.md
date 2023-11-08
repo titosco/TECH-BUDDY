@@ -88,3 +88,22 @@ Create & Update profile routes
 router.post('/', auth, [], async(req, res) =>{});
 Build proffile object
 Build social object
+
+A route to get all profiles
+router.get('/', async(req, res) =>{})
+Inside the async func. use try/catch statement
+Inside try -
+const profiles = await Profile.find().populate('user', ['name', 'avatar']);
+res.json(profiles);
+Inside catch-
+console.error(err.message);
+res.status(500).send('Server Error');
+
+Get profile by user id
+same route.get. But different try/catch statement
+Inside try, add this to the exiting statement-
+if(!profile) return res.status(400).json({ msg: 'Profile not found!'});
+Inside catch, add this to the exiting statement-
+if(err.kind == 'ObjectId'){
+return res.status(400).json({ msg: 'Profile not found!'});
+}
