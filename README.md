@@ -107,3 +107,39 @@ Inside catch, add this to the exiting statement-
 if(err.kind == 'ObjectId'){
 return res.status(400).json({ msg: 'Profile not found!'});
 }
+
+Get user experience
+PUT api/profile/experience
+const {
+title,
+company,
+location,
+from,
+to,
+current,
+description
+}= req.body;
+const newExp = {
+title,
+company,
+location,
+from,
+to,
+current,
+description
+}
+Inside the tryCatch{}
+const profile = await Profile.findOne({ user: req.user.id});
+profile.experience.unshift(newExp);
+await profile.save();
+res.json(profile);
+The catch func errors stays the same
+
+Delete user experience
+DELETE api/profile/experience/:exp_id
+Inside tryCatch statement
+Get remove index
+const removeIndex = profile.experience.map(item => item.id).indexOf(req.params.exp_id);
+profile.experience.splice(removeIndex, 1);
+Catch errors stays the same
+note - i tried doing for update but i could not get it so i'll just comment it
